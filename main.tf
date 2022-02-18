@@ -44,7 +44,7 @@ resource "aws_instance" "nginx" {
     }
   }
   provisioner "local-exec" {
-    command = "ansible-playbook -i ${aws_instance.nginx.public_ip}, --private-key /var/lib/jenkins/onekeypair.pem copy.yaml"
+    command = "ansible-playbook -u ubuntu -i ${aws_instance.nginx.public_ip}, --private-key /var/lib/jenkins/onekeypair.pem copy.yaml"
   }
 
 }
