@@ -42,7 +42,7 @@ resource "aws_instance" "nginx" {
     inline = ["echo 'Wait until SSH is ready'"]
   }
   provisioner "local-exec" {
-    command = "ansible-playbook -i ${aws_instance.nginx.public_ip}, --private-key /var/lib/jenkins/onekeypair.pem copy.yaml"
+    command = "ansible-playbook -u ubuntu -i ${aws_instance.nginx.public_ip}, --private-key /var/lib/jenkins/onekeypair.pem copy.yaml"
   }
 }
 
