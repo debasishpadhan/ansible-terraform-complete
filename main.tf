@@ -1,8 +1,3 @@
-locals {
-  private_key_path = "/var/lib/jenkins/onekeypair.pem"
-  # ansible_file_path = "/var/lib/jenkins/copy.yaml"
-}
-
 provider "aws" {
   region = "ap-south-1"
 }
