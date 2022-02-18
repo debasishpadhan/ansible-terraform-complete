@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage ("checkout from GIT") {
             steps {
-                git 'https://github.com/debasishpadhan/ansible-terraform-complete.git'
-            }
+                git "https://github.com/debasishpadhan/ansible-terraform-complete.git'"            }
         }
         stage ("terraform init") {
             steps {
